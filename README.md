@@ -1,6 +1,8 @@
 # CompassPlus-Serverside
 clone then drag files to MAMP htdocs if working @ school
 
+update url in model connect if needed & import sql into laptop phpadmin
+
 stuff done
 
 users table
