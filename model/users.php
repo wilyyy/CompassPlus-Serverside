@@ -56,7 +56,7 @@ function AddUsers(
     //$result = $db->query("INSERT INTO `movies` (`id`, `movie_name`) VALUES (NULL, '".$name."')");
 }
 
-//Updates a user's information
+//Updates a user's information - doesnt work rn but dont need it
 function UpdateUsers(
     $id=NULL, 
     $fb_uid, 
