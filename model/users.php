@@ -1,7 +1,90 @@
 <?php
-require_once("model/connect.php");
+require_once("connect.php");
 
-function AddUsers($id=NULL, $first_name="default", $last_name="default"){
+//get all users
+function GetUsers(){
     global $db;
+  
+    //prepare the query to prevent SQL Injection that hacks and kills our database
+    $stmt = $db->prepare('SELECT * FROM `users`');
+    $stmt->execute();
+    //SELECT all the movies from the sheet
+    //$result = $db->query('SELECT * FROM `movies`');
+    return $stmt->fetchAll();
+    //var_dump($result->fetchAll());
+}
+
+//get a user by ID
+function GetUserById($id=NULL){
+    global $db;
+
+    $stmt = $db->prepare('SELECT * FROM `users` WHERE id = :id', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmt->execute(array(":id"=>$id));
+
+    return $stmt->fetchAll();
+}
+
+//Add a user
+function AddUsers(
+    $fb_uid=0, 
+    $first_name='Babe', 
+    $last_name='Ruth', 
+    $age=20
+){
+    global $db;
+    // try {
+    //   $result = $db->query("INSERT INTO `movies` (`id`, `movie_name`) VALUES (NULL, '".$name."')");
+    //   var_dump($result);
+    // } catch (Exception $e){
+    //   echo $e->getMessage();
+    // }
+    // return false;
+    //prepare the query and check :m_name to see if there's special character problems
+    $stmt = $db->prepare("INSERT INTO `users` (`id`, `fb_uid`, `first_name`, `last_name`, `age`) VALUES (NULL, :fb_uid, :first_name, :last_name, :age)", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmt->execute(array(
+        ":fb_uid"=>$fb_uid,
+        ":first_name"=>$first_name,
+        ":last_name"=>$last_name,
+        ":age"=>$age
+    ));
+    //var_dump($stmt->lastInsertId());
+  
+    //return the last inserted id
+    return $db->lastInsertId();
+  
+    //INSERT a new movie to the sheet
+    //$result = $db->query("INSERT INTO `movies` (`id`, `movie_name`) VALUES (NULL, '".$name."')");
+}
+
+//Updates a user's information
+function UpdateUsers(
+    $id=NULL, 
+    $fb_uid, 
+    $first_name="Bobby", 
+    $last_name="Dee", 
+    $age=30
+){
+    global $db;
+  
+    if($id == NULL){
+      return false;
+    }
+  
+    $stmt = 
+        $db->prepare("UPDATE `users` SET 
+            `fb_uid` = :fb_uid,
+            `first_name` = :first_name,
+            `last_name` = :last_name,
+            `age` = :age,
+            WHERE `movies`.`id` = :id;", 
+            array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY)
+        );
+    $stmt->execute(array(
+        ":id"=>$id,
+        ":fb_uid"=>$fb_uid,
+        ":first_name"=>$first_name,
+        ":last_name"=>$last_name,
+        ":age"=>$age
+    ));
 }
 ?>
