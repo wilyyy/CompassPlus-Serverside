@@ -28,6 +28,7 @@ function GetUserById($id=NULL){
 function AddUsers(
     $fb_uid=0, 
     $first_name='Babe', 
+    $last_name='Ruth', 
     $age=20
 ){
     global $db;
@@ -39,10 +40,11 @@ function AddUsers(
     // }
     // return false;
     //prepare the query and check :m_name to see if there's special character problems
-    $stmt = $db->prepare("INSERT INTO `users` (`id`, `fb_uid`, `first_name`, `age`) VALUES (NULL, :fb_uid, :first_name, :age)", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmt = $db->prepare("INSERT INTO `users` (`id`, `fb_uid`, `first_name`, `last_name`, `age`) VALUES (NULL, :fb_uid, :first_name, :last_name, :age)", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
     $stmt->execute(array(
         ":fb_uid"=>$fb_uid,
         ":first_name"=>$first_name,
+        ":last_name"=>$last_name,
         ":age"=>$age
     ));
     //var_dump($stmt->lastInsertId());

@@ -28,6 +28,7 @@ function GetUserById($id=NULL){
 function AddUsers(
     $fb_uid=0, 
     $first_name='Babe', 
+    // $last_name='Ruth', 
     $age=20
 ){
     global $db;
@@ -43,6 +44,7 @@ function AddUsers(
     $stmt->execute(array(
         ":fb_uid"=>$fb_uid,
         ":first_name"=>$first_name,
+        // ":last_name"=>$last_name,
         ":age"=>$age
     ));
     //var_dump($stmt->lastInsertId());
