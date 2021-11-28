@@ -6,7 +6,6 @@ if(count($_GET) == 0){
   
   if(is_numeric($_GET['id'])){
     //get individual movies
-    echo "invalid request";
   } else {
     echo "invalid request";
   }
