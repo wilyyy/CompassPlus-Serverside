@@ -2,7 +2,7 @@
 #### Saved Locations
 - delete saved locations from saved_locations table doesnt work, idk how to test it
 
-#Stuff still gotta do
+##Stuff still gotta do
 #### Bus Ticket
 - only get by id and possibly get all requests dont need any other ones, braindead ez
 
