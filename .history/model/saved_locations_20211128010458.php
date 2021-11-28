@@ -25,16 +25,17 @@ function GetSavedLocationsById($id=NULL){
 }
 
 function AddSavedLocations(
-    $fb_uid,
-    $name="Bus Stop",
+    $id=NULL,
+    $fb_uid=0,
+    $location_name="Bus Stop",
     $location="Vancouver"
 ){
     global $db;
  
-    $stmt = $db->prepare("INSERT INTO `saved_locations` (`id`, `fb_uid`, `name`, `location`) VALUES (NULL, :fb_uid, :name, :location)", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmt = $db->prepare("INSERT INTO `saved_locations` (`id`, `fb_uid`, `name`, `location`) VALUES (NULL, :fb_uid, :location_name, :location)", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
     $stmt->execute(array(
         ":fb_uid"=>$fb_uid,
-        ":name"=>$name,
+        ":Location_name"=>$Location_name,
         ":location"=>$location
     ));
     //var_dump($stmt->lastInsertId());
