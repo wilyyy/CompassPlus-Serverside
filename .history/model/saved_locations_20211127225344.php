@@ -32,11 +32,11 @@ function AddSavedLocations(
 ){
     global $db;
  
-    $stmt = $db->prepare("INSERT INTO `saved_locations` (`id`, `fb_uid`, `name`, `location`) VALUES (NULL, :fb_uid, :name, :location)", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmt = $db->prepare("INSERT INTO `users` (`id`, `fb_uid`, `name`, `location`) VALUES (NULL, :fb_uid, :location_name, :location_addy)", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
     $stmt->execute(array(
         ":fb_uid"=>$fb_uid,
-        ":name"=>$name,
-        ":location"=>$location
+        ":location_name"=>$name,
+        ":location_addy"=>$location
     ));
     //var_dump($stmt->lastInsertId());
   

@@ -27,16 +27,16 @@ function GetSavedLocationsById($id=NULL){
 function AddSavedLocations(
     $id=NULL,
     $fb_uid,
-    $name="Bus Stop",
-    $location="Vancouver"
+    $name,
+    $location
 ){
     global $db;
  
-    $stmt = $db->prepare("INSERT INTO `saved_locations` (`id`, `fb_uid`, `name`, `location`) VALUES (NULL, :fb_uid, :name, :location)", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmt = $db->prepare("INSERT INTO `users` (`id`, `fb_uid`, `first_name`, `age`) VALUES (NULL, :fb_uid, :first_name, :age)", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
     $stmt->execute(array(
         ":fb_uid"=>$fb_uid,
-        ":name"=>$name,
-        ":location"=>$location
+        ":first_name"=>$first_name,
+        ":age"=>$age
     ));
     //var_dump($stmt->lastInsertId());
   
@@ -45,6 +45,4 @@ function AddSavedLocations(
   
     //INSERT a new movie to the sheet
     //$result = $db->query("INSERT INTO `movies` (`id
-}
-
 ?>
