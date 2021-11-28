@@ -25,7 +25,8 @@ function GetSavedLocationsById($id=NULL){
 }
 
 function AddSavedLocations(
-    $fb_uid,
+    $id=NULL,
+    $fb_uid=0,
     $name="Bus Stop",
     $location="Vancouver"
 ){
