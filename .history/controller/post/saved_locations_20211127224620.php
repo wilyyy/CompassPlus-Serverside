@@ -5,7 +5,7 @@ if(
     isset($_POST['name']) &&
     isset($_POST['location'])
 ){
-  $lastid = AddSavedLocations(
+  $lastid = AddUsers(
       $_POST['fb_uid'], 
       $_POST['name'],
       $_POST['location']
