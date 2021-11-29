@@ -9,6 +9,6 @@ if(count($_GET) == 0){
   //   // echo json_encode(GetUserById($_GET['id']));
   // } else {
     // echo "invalid request";
-}
+  }
 
 ?>
