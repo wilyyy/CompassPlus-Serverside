@@ -25,14 +25,14 @@ function GetUserById($id=NULL){
 }
 
 //get a user by Fb_uid
-function GetUserByFb_uid($fb_uid=NULL){
-    global $db;
+// function GetUserById($id=NULL){
+//     global $db;
 
-    $stmt = $db->prepare('SELECT * FROM `users` WHERE fb_uid = :fb_uid', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-    $stmt->execute(array(":fb_uid"=>$fb_uid));
+//     $stmt = $db->prepare('SELECT * FROM `users` WHERE id = :id', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+//     $stmt->execute(array(":id"=>$id));
 
-    return $stmt->fetchAll();
-}
+//     return $stmt->fetchAll();
+// }
 //Add a user
 function AddUsers(
     $fb_uid=0, 

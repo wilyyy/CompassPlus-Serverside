@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 28, 2021 at 10:20 PM
+-- Generation Time: Nov 29, 2021 at 08:05 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.16
 
@@ -82,14 +82,8 @@ CREATE TABLE `saved_locations` (
 --
 
 INSERT INTO `saved_locations` (`id`, `fb_uid`, `name`, `location`) VALUES
-(1, 'asdsad', 'home', 'getUserAdress'),
-(2, 'sdasd', 'asdasd', 'asdsad'),
 (3, 'Home', '1529 W Pender St', 'Vancouver'),
-(4, 'Home2', '1529 W Pender S2t', 'Vancouver'),
-(5, 'Hom3e2', '1529 W Pender S23t', 'Vancouver'),
-(6, 'Hom3e2', '1529 W Pender S23t', 'Vancouver'),
-(7, 'Hom3e2', '1529 W Pender S23t', 'Vancouver'),
-(8, 'sfdsadsad2223', 'Hom3e2', '1529 W Pender S23t');
+(4, 'Home2', '1529 W Pender S2t', 'Vancouver');
 
 -- --------------------------------------------------------
 
@@ -115,8 +109,11 @@ INSERT INTO `users` (`id`, `fb_uid`, `first_name`, `age`) VALUES
 (4, 'asdsadasd', 'willy', 23),
 (5, 'ZKqG0ZUQ7YXnddRyVMfXpXPwqc53', 'Fred', 20),
 (6, 'asdsadasd', 'brandon', 23),
-(7, 'QwtPBClKPvfgVTAx31Nhg5t30Yp2', 'Fred', 20),
-(8, '8TlzDqFP7NhIWFfRO29e77gFEDh1', 'Ben', 20);
+(7, 'CmJinSKqQMRLpDCc5SFWd69AgVY2', 'Yo', 23),
+(27, 'aNgwp6vay2T6X8aPmvfeF4n10U52', 'Yie', 34),
+(28, 'GrK9YZUunfW4hSyGLIBWmf5XZVF3', 'Mario', 34),
+(29, '1vd2JwK5eLgPSnV98DEg9j83hTr2', 'Try', 23),
+(30, 'h9oYQnSpCTbDkQxe04ILVuJsFjA3', 'Willy3', 23);
 
 --
 -- Indexes for dumped tables
@@ -160,13 +157,13 @@ ALTER TABLE `bus_ticket`
 -- AUTO_INCREMENT for table `saved_locations`
 --
 ALTER TABLE `saved_locations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

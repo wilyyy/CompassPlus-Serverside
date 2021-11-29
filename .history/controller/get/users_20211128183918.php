@@ -8,7 +8,7 @@ if(count($_GET) == 0){
   //   //get individual movies
   //   // echo json_encode(GetUserById($_GET['id']));
   // } else {
-    // echo "invalid request";
+    echo "invalid request";
+  }
 }
-
 ?>
