@@ -13,6 +13,7 @@ function GetCompassCard(){
     //var_dump($result->fetchAll());
 }
 
+//test if this works
 function AddCompassCard(
     $fb_uid = 0,
     $balance=10.25,
