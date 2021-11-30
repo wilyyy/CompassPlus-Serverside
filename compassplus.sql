@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 29, 2021 at 08:05 AM
+-- Generation Time: Nov 30, 2021 at 03:17 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.16
 
@@ -157,7 +157,7 @@ ALTER TABLE `bus_ticket`
 -- AUTO_INCREMENT for table `saved_locations`
 --
 ALTER TABLE `saved_locations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
