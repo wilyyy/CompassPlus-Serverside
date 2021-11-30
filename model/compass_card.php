@@ -39,4 +39,21 @@ function AddCompassCard(
     //INSERT a new movie to the sheet
     //$result = $db->query("INSERT INTO `
 }
+
+function UpdateBalance(
+    $fb_uid,
+    $amount = 0
+){
+    global $db;
+
+    $stmt = $db->prepare("UPDATE `compass_card` SET `balance`=`balance` + :amount WHERE `fb_uid` = :fb_uid");
+
+    $stmt->execute(array(
+        ":fb_uid"=>$fb_uid,
+        ":amount"=>$amount
+    ));
+
+    return true;
+    
+}
 ?>
