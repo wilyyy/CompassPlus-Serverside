@@ -14,6 +14,15 @@ function GetSavedLocations(){
     //var_dump($result->fetchAll());
 }
 
+function GetSavedLocationsByFb_uid($fb_uid=NULL){
+  global $db;
+
+  $stmt = $db->prepare('SELECT * FROM `saved_locations` WHERE fb_uid = :fb_uid', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+  $stmt->execute(array(":fb_uid"=>$fb_uid));
+
+  return $stmt->fetchAll();
+}
+
 //get location by id, input into map screen
 function GetSavedLocationsById($id=NULL){
     global $db;

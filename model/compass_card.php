@@ -13,13 +13,22 @@ function GetCompassCard(){
     //var_dump($result->fetchAll());
 }
 
+function GetCompassCardByFb_uid($fb_uid=NULL){
+    global $db;
+
+    $stmt = $db->prepare('SELECT * FROM `compass_card` WHERE fb_uid = :fb_uid', array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $stmt->execute(array(":fb_uid"=>$fb_uid));
+
+    return $stmt->fetchAll();
+}
+
 //test if this works
 function AddCompassCard(
     $fb_uid = 0,
     $balance=10.25,
-    $monthly=0,
-    $compass_card_number=55555555555555555555,
-    $cvn=123
+    $monthly=false,
+    $compass_card_number="5555555555555",
+    $cvn="123"
 ){
     global $db;
    
