@@ -1,8 +1,4 @@
-## what i still need/talk to henry about
-
-#### Compass Card Ticket
-- Update request for balance - ???? might be hard cus gotta do math with decimal data type ask henry 
-- figure out why post request isnt working 
-
+## Compass Plus Server Side Application
+A PHP application that handles all CRUD for [CompassPlus](https://www.google.com). This application uses an MVC (Model, View Controller) architecture to communicate with our database. This application is hosted remotely on Heroku alongside our database which is being hosted on Digital Ocean; this allows CompassPlus to be run without the use of a local host.
 
 
