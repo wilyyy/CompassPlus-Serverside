@@ -7,10 +7,8 @@ function GetCompassCard(){
     //prepare the query to prevent SQL Injection that hacks and kills our database
     $stmt = $db->prepare('SELECT * FROM `compass_card`');
     $stmt->execute();
-    //SELECT all the movies from the sheet
-    //$result = $db->query('SELECT * FROM `movies`');
+
     return $stmt->fetchAll();
-    //var_dump($result->fetchAll());
 }
 
 function GetCompassCardByFb_uid($fb_uid=NULL){
@@ -22,7 +20,6 @@ function GetCompassCardByFb_uid($fb_uid=NULL){
     return $stmt->fetchAll();
 }
 
-//test if this works
 function AddCompassCard(
     $fb_uid = 0,
     $balance=10.25,
@@ -41,13 +38,10 @@ function AddCompassCard(
         ":compass_card_number"=>$compass_card_number,
         ":cvn"=>$cvn
     ));
-    //var_dump($stmt->lastInsertId());
   
     //return the last inserted id
     return $db->lastInsertId();
   
-    //INSERT a new movie to the sheet
-    //$result = $db->query("INSERT INTO `
 }
 
 function UpdateBalance(

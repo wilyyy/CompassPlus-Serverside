@@ -8,10 +8,8 @@ function GetSavedLocations(){
     //prepare the query to prevent SQL Injection that hacks and kills our database
     $stmt = $db->prepare('SELECT * FROM `saved_locations`');
     $stmt->execute();
-    //SELECT all the movies from the sheet
-    //$result = $db->query('SELECT * FROM `movies`');
+
     return $stmt->fetchAll();
-    //var_dump($result->fetchAll());
 }
 
 function GetSavedLocationsByFb_uid($fb_uid=NULL){
@@ -51,8 +49,6 @@ function AddSavedLocations(
     //return the last inserted id
     return $db->lastInsertId();
   
-    //INSERT a new movie to the sheet
-    //$result = $db->query("INSERT INTO `movies` (`id
 }
 
 function DeleteSavedLocations($id=NULL){
